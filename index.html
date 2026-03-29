@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semáforo Virtual</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Script -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="sinaleira">
+      <div id="verde" class="luz luz-verde verde-ligada"></div>
+      <div id="amarela" class="luz luz-amarela"></div>
+      <div id="vermelha" class="luz luz-vermelha"></div>
+    </div>
+    <div id="poste">
+      <div id="btn-fechar" class="botao">Fechar</div>
+      <div id="btn-abrir" class="botao">Abrir</div>
+    </div>
+    <div id="caixa-botoes">
+      <div id="btn-normal" class="btn-modo btn-modo-ativo">Normal</div>
+      <div id="btn-noturno" class="btn-modo">Noturno</div>
+      <div id="btn-emergencia" class="btn-modo">Emergência</div>
+    </div>
+  </body>
+</html>
