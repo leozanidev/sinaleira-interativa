@@ -3,7 +3,7 @@
 Simulador de semáforo desenvolvido com **HTML, CSS e JavaScript puro**, permitindo a interação do usuário e a alternância entre diferentes modos de operação.
 
 🔗 **Acesse o projeto online:**
-[👉 Clique aqui para visualizar](COLOQUE_AQUI_O_LINK_DO_GITHUB_PAGES)
+[👉 Clique aqui para visualizar]([COLOQUE_AQUI_O_LINK_DO_GITHUB_PAGES](https://leozanidev.github.io/sinaleira-interativa/))
 
 ---
 
@@ -67,6 +67,7 @@ cd NOME-DO-REPO
 ---
 
 ## 👨‍💻 Autor
-
+Leonardo Zani de Souza
+Linkedin: https://www.linkedin.com/in/leozani-dev/
 Desenvolvido por **Leonardo Zani**
 🔗 [LinkedIn](https://www.linkedin.com/in/leozani-dev/)
