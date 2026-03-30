@@ -88,9 +88,9 @@ btnClose.addEventListener("click", (e) => {
     timer2 = setTimeout(() => {
       redLight.classList.remove("vermelha-ligada");
       greenLight.classList.add("verde-ligada");
+      btnClose.classList.remove("botao-desabilitado");
     }, 7000);
   }
-  btnClose.classList.remove("botao-desabilitado");
 });
 
 btnOpen.addEventListener("click", (e) => {
