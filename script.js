@@ -97,6 +97,9 @@ btnOpen.addEventListener("click", (e) => {
   if (modo == "Normal") {
     clearTimeout(timer1);
     clearTimeout(timer2);
+    if (btnClose.classList.contains("botao-desabilitado")) {
+      btnClose.classList.remove("botao-desabilitado");
+    }
     redLight.classList.remove("vermelha-ligada");
     yellowLight.classList.remove("amarela-ligada");
     greenLight.classList.add("verde-ligada");
