@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semáforo Virtual</title>
+    <title>Sinaleira Interativa | Simulador de Semáforo</title>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="./styles.css" />
@@ -12,19 +12,51 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div id="sinaleira">
-      <div id="verde" class="luz luz-verde verde-ligada"></div>
-      <div id="amarela" class="luz luz-amarela"></div>
-      <div id="vermelha" class="luz luz-vermelha"></div>
-    </div>
-    <div id="poste">
-      <div id="btn-fechar" class="botao">Fechar</div>
-      <div id="btn-abrir" class="botao">Abrir</div>
-    </div>
-    <div id="caixa-botoes">
-      <div id="btn-normal" class="btn-modo btn-modo-ativo">Normal</div>
-      <div id="btn-noturno" class="btn-modo">Noturno</div>
-      <div id="btn-emergencia" class="btn-modo">Emergência</div>
-    </div>
+    <main id="container">
+      <section id="semaforo" aria-label="Semáforo">
+        <div id="sinaleira">
+          <div
+            id="verde"
+            class="luz luz-verde verde-ligada"
+            aria-label="Luz verde"></div>
+          <div
+            id="amarela"
+            class="luz luz-amarela"
+            aria-label="Luz amarela"></div>
+          <div
+            id="vermelha"
+            class="luz luz-vermelha"
+            aria-label="Luz vermelha"></div>
+        </div>
+        <div id="poste">
+          <button
+            type="button"
+            id="btn-fechar"
+            class="botao"
+            aria-label="Fechar semáforo">
+            Fechar
+          </button>
+          <button
+            type="button"
+            id="btn-abrir"
+            class="botao"
+            aria-label="Abrir semáforo">
+            Abrir
+          </button>
+        </div>
+      </section>
+      <section
+        id="caixa-botoes"
+        role="group"
+        aria-label="Controles de Modos do Semáforo">
+        <button type="button" id="btn-normal" class="btn-modo btn-modo-ativo">
+          Normal
+        </button>
+        <button type="button" id="btn-noturno" class="btn-modo">Noturno</button>
+        <button type="button" id="btn-emergencia" class="btn-modo">
+          Emergência
+        </button>
+      </section>
+    </main>
   </body>
 </html>

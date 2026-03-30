@@ -11,35 +11,37 @@ let timer2;
 let interval1;
 let modo;
 
-function controlaModo() {
-  if (modo == "Noturno") {
-    clearInterval(interval1);
-    greenLight.classList.remove("verde-ligada");
-    redLight.classList.remove("vermelha-ligada");
-    yellowLight.classList.add("amarela-ligada");
+function modoEmergencia() {
+  greenLight.classList.remove("verde-ligada");
+  yellowLight.classList.remove("amarela-ligada");
+  redLight.classList.add("vermelha-ligada");
+}
 
-    interval1 = setInterval(() => {
-      if (yellowLight.classList.contains("amarela-ligada")) {
-        yellowLight.classList.remove("amarela-ligada");
-      } else {
-        yellowLight.classList.add("amarela-ligada");
-      }
-    }, 800);
-  }
+function modoNoturno() {
+  clearInterval(interval1);
+  greenLight.classList.remove("verde-ligada");
+  redLight.classList.remove("vermelha-ligada");
+  yellowLight.classList.add("amarela-ligada");
 
-  if (modo == "Emergencia") {
-    greenLight.classList.remove("verde-ligada");
-    yellowLight.classList.remove("amarela-ligada");
-    redLight.classList.add("vermelha-ligada");
-  }
+  interval1 = setInterval(() => {
+    if (yellowLight.classList.contains("amarela-ligada")) {
+      yellowLight.classList.remove("amarela-ligada");
+    } else {
+      yellowLight.classList.add("amarela-ligada");
+    }
+  }, 800);
+}
+
+function limpaTimer() {
+  clearInterval(interval1);
+  clearTimeout(timer1);
+  clearTimeout(timer2);
 }
 
 modo = "Normal";
 
 btnNormal.addEventListener("click", (e) => {
-  clearInterval(interval1);
-  clearTimeout(timer1);
-  clearTimeout(timer2);
+  limpaTimer();
   redLight.classList.remove("vermelha-ligada");
   greenLight.classList.add("verde-ligada");
   btnClose.classList.remove("botao-desabilitado");
@@ -51,35 +53,32 @@ btnNormal.addEventListener("click", (e) => {
 });
 
 btnNoturno.addEventListener("click", (e) => {
-  clearInterval(interval1);
-  clearTimeout(timer1);
-  clearTimeout(timer2);
+  limpaTimer();
   btnNormal.classList.remove("btn-modo-ativo");
   btnEmergencia.classList.remove("btn-modo-ativo");
   btnNoturno.classList.add("btn-modo-ativo");
   btnClose.classList.add("botao-desabilitado");
   btnOpen.classList.add("botao-desabilitado");
   modo = "Noturno";
-  controlaModo();
+  modoNoturno();
 });
 
 btnEmergencia.addEventListener("click", (e) => {
-  clearInterval(interval1);
-  clearTimeout(timer1);
-  clearTimeout(timer2);
+  limpaTimer();
   btnNoturno.classList.remove("btn-modo-ativo");
   btnNormal.classList.remove("btn-modo-ativo");
   btnEmergencia.classList.add("btn-modo-ativo");
   btnClose.classList.add("botao-desabilitado");
   btnOpen.classList.add("botao-desabilitado");
   modo = "Emergencia";
-  controlaModo();
+  modoEmergencia();
 });
 
 btnClose.addEventListener("click", (e) => {
   if (modo == "Normal") {
     clearTimeout(timer1);
     clearTimeout(timer2);
+    btnClose.classList.add("botao-desabilitado");
     greenLight.classList.remove("verde-ligada");
     yellowLight.classList.add("amarela-ligada");
     timer1 = setTimeout(() => {
@@ -91,6 +90,7 @@ btnClose.addEventListener("click", (e) => {
       greenLight.classList.add("verde-ligada");
     }, 7000);
   }
+  btnClose.classList.remove("botao-desabilitado");
 });
 
 btnOpen.addEventListener("click", (e) => {
